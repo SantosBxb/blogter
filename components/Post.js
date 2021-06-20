@@ -132,8 +132,9 @@ const Post = ({ post }) => {
         <div className="mx-3 ">
           <p>{post.descripcion}</p>
         </div>
-        <div className={`mx-auto mb-3`}>
-          <Image className="image" src={urlImg} width="fill" height="fill"/>
+        
+        <div className='image-container '>
+          <Image src={urlImg} layout="fill" className={'image'} alt="image" />
         </div>
 
         <div className="card bg-secondary mx-2 shadow">
@@ -152,7 +153,7 @@ const Post = ({ post }) => {
               }`}
               onClick={clickComentarios}
             >
-              {displayComentarios ? "Ver Comentarios" : "Ocultar Comentarios"}
+              {displayComentarios ? `Ver ${comentarios.length} Comentarios` : "Ocultar Comentarios"}
             </button>
           </div>
         </div>

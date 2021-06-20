@@ -36,8 +36,8 @@ const Comentario = ({ comentario }) => {
           <small className="">{creado}</small>
         </div>
       </div>
-      <div className="mx-5 border shadow rounded-3 mb-4 ">
-        <p className="mx-3">{comentario.comentario}</p>
+      <div className="mx-5 border shadow rounded-3 my-1 ">
+        <p className="mx-3 my-auto">{comentario.comentario}</p>
         {/* {true ? (
           <div className="mx-4 mb-2">
             <Image

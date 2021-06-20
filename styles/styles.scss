@@ -50,7 +50,25 @@ $custom-colors: (
   $theme-colors: map-merge($theme-colors, $custom-colors);
   
   
+.image-container {
+  margin: 0 auto 1rem;
+  width:95%;
+  @media (min-width:992px){
+    width:60%;
+  }
 
+
+  > div {
+    position: unset !important;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100%!important;
+    position: relative !important;
+    height: unset !important;
+  }
+}
 .btn-hover:hover{
   background-color: #111;
   color: #bbb !important;
@@ -128,12 +146,6 @@ $custom-colors: (
   resize: none;
 }
 
-.image{
-  max-width:60vw;
-  @media (max-width:992px){
-    max-width: 95vw;
-  }
-}
 
 .fijo{
   position: sticky;

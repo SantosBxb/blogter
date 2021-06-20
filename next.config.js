@@ -3,6 +3,6 @@ module.exports = {
   images: {
     domains: ['firebasestorage.googleapis.com'],
     deviceSizes: [640, 992],
-    imageSizes: [500, 1000],
+    imageSizes: [1000, 50],
   },
 }

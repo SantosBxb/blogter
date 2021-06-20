@@ -99,7 +99,7 @@ const Header = () => {
                   </div>
                 </a>
               </Link>
-              <Link href="/">
+              <Link href="/" passHref>
                 <button 
                   onClick={() => firebase.cerrarSesion()} 
                   className="btn btn-outline-danger my-3 mx-1">Cerrar Sesión</button> 
