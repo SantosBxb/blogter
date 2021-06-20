@@ -15,30 +15,12 @@ const Footer = () => {
           </div>
           <div className="m-2 col-12 d-flex justify-content-center">Por @Bryan Santos</div>
           <div className="m-2 col-12 d-flex justify-content-center">
-            <a href="https://github.com/SantosBxb" target="_blank" className='d-flex align-items-center'>
-              <Image src="/images/github.png" width={30} height={30} />
+            <a href="https://github.com/SantosBxb" target="_blank" rel="noreferrer" className='d-flex align-items-center'>
+              <Image src="/images/github.png" width={30} height={30} alt="Imagen"/>
               <p className='mx-1 mt-2 mb-2'>@SantosBxb</p>
             </a>
           </div>
         </div>
-
-        {/* <footer className="card my-5 shadow-lg rounded-pill">
-        <div className="d-flex align-items-center justify-content-around">
-          <div className="">
-            <Link href="/">
-              <a className="text-decoration-none  rounded-3 ">
-                <h1 className="d-inline shadow  ">BlogTer</h1>
-              </a>
-            </Link>
-          </div>
-          <div className="">Por @Bryan Santos</div>
-          <div className="my-2">
-            <a href="https://github.com/SantosBxb" target="_blank" className='d-flex align-items-center'>
-              <Image src="/images/github.png" width={30} height={30} />
-              <p className='mx-1 mt-2 mb-2'>@SantosBxb</p>
-            </a>
-          </div>
-        </div> */}
     </footer>
   );
 };

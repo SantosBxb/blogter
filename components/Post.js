@@ -133,7 +133,7 @@ const Post = ({ post }) => {
           <p>{post.descripcion}</p>
         </div>
         <div className={`mx-auto mb-3`}>
-          <img className="image" src={urlImg} />
+          <Image className="image" src={urlImg} width="fill" height="fill"/>
         </div>
 
         <div className="card bg-secondary mx-2 shadow">

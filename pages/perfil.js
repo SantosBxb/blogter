@@ -238,6 +238,7 @@ const Perfil = () => {
                   <div className="mx-3">
                     <Image
                       className="rounded-circle"
+                      alt="Imagen"
                       src={urlImg}
                       width={50}
                       height={50}
