@@ -1,0 +1,162 @@
+
+$primary: #5678EF; 
+$secondary: #f5f3f3;
+$info:#0099ff;
+$dark:rgba(218, 208, 208, 0.692);
+$success: #39a5a5;
+$warning: #cf9047;
+$utilities: (
+  "viewport-height": (
+    property: height,
+    class: vh,
+    values: (100: 100vh, 75: 75vh, 5: 5vh)
+  ),
+  "viewport-width":(
+    property: width,
+    class: vw,
+    values: (20: 20vw, 100: 100vw)
+  ),
+  "height": (
+    property: height,
+    class: h,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto,
+      1: 1rem,
+      2: 2rem,
+      3: 3rem,
+      4: 4rem,
+      12: 12rem,
+    )) 
+);
+      
+      
+@import '../node_modules//bootstrap/scss/bootstrap.scss';
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$body-bg: #fff;
+
+// Create your own map
+$custom-colors: (
+  'negro': #000
+  );
+  // Merge the maps
+  $theme-colors: map-merge($theme-colors, $custom-colors);
+  
+  
+
+.btn-hover:hover{
+  background-color: #111;
+  color: #bbb !important;
+  transform: scale(1.005, 1.005);  
+}
+.btn-hover-2:hover{
+  background-color:$dark;
+  transform: scale(1.005, 1.005);  
+}
+.btn-hover:active{
+  transform: scale(0.999, 0.999); 
+}
+
+.m-5vh{
+  margin-top:5vh;
+}
+
+.file-select {          
+  position: relative;
+  display: inline-block;
+}
+ 
+.file-select::before {
+  
+  display: flex;            
+  justify-content: center;
+  align-items: center;
+  content: 'Seleccionar'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;                
+}
+ 
+.file-select input[type="file"] {
+  opacity: 0;
+  width: 5rem;
+  height: 2rem;
+  display: inline-block;            
+}
+ 
+#imagen::before {
+  content: 'Subir Imagen';
+  cursor: pointer;
+}
+.square{
+  width:2rem;
+  height: 2rem;
+}
+.width-buscar{
+  @media (min-width:992px){
+    max-width: 25vw;
+  }
+}
+.bg-negro{
+  background: linear-gradient(#000, #333);
+}
+.bg-se{
+  background: linear-gradient(#000, #333)
+}
+.bg-menu{
+  background: linear-gradient(rgba(49, 50, 51, 0.644), );
+  opacity: 1;
+  margin: 0 1rem;
+}
+.bg-menu:hover{
+  transform: scale(0.9, 0.9);
+
+}
+.bg-menu:active{
+  transform: scale(0.9, 0.9);  
+}
+.no-resize{
+  resize: none;
+}
+
+.image{
+  max-width:60vw;
+  @media (max-width:992px){
+    max-width: 95vw;
+  }
+}
+
+.fijo{
+  position: sticky;
+  top:0;
+  right:0;
+  z-index: 100;
+
+  @media (max-width:992px){
+    position: sticky;
+    top:-4.8rem;
+    right:0;
+    z-index: 100;
+  }
+  @media (max-width:768px){
+    position: sticky;
+    top:-4.5rem;
+    right:0;
+    z-index: 100;
+  }
+  @media (max-width:576px){
+    position: sticky;
+    top:-3.9rem;
+    right:0;
+    z-index: 100;
+  }
+}
