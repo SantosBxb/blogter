@@ -5,11 +5,8 @@ import { useState } from 'react';
 // import 'bootstrap/dist/js/bootstrap.bundle'
 
 function MyApp({ Component, pageProps }) {
-
-  // ver si hay usuario autenticado 
+  
   const usuario = useAutenticacion();
-  console.log();
-
 
 
   return (

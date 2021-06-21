@@ -11497,6 +11497,17 @@ fieldset:disabled .btn {
   }
 }
 
+.min-height {
+  min-height: 75vh;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .image-container {
   margin: 0 auto 1rem;
   width: 95%;
@@ -11545,6 +11556,11 @@ fieldset:disabled .btn {
 .file-select {
   position: relative;
   display: inline-block;
+  padding: 0;
+  margin: auto 0;
+  width: 10rem;
+  height: 2.5rem;
+  cursor: pointer;
 }
 
 .file-select::before {
@@ -11564,18 +11580,23 @@ fieldset:disabled .btn {
   right: 0;
   top: 0;
   bottom: 0;
+  cursor: pointer;
 }
 
 .file-select input[type="file"] {
   opacity: 0;
-  width: 5rem;
-  height: 2rem;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   display: inline-block;
+  cursor: pointer;
 }
 
 #imagen::before {
   content: 'Subir Imagen';
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
 }
 
 .square {
@@ -11618,6 +11639,16 @@ fieldset:disabled .btn {
 
 .no-resize {
   resize: none;
+}
+
+.cargando-contenedor {
+  position: relative;
+  z-index: 1;
+}
+
+.cargando {
+  position: absolute;
+  z-index: 100;
 }
 
 .fijo {

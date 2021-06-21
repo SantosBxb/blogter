@@ -1,7 +1,7 @@
-import Image from "next/image";
 import React from "react";
 import { intlFormat, toDate } from "date-fns";
 import { es } from "date-fns/locale";
+import { Img } from "./ui/Img";
 
 const Comentario = ({ comentario }) => {
   const creado = intlFormat(
@@ -23,7 +23,7 @@ const Comentario = ({ comentario }) => {
     <div className="card mx-4 my-3 bg-secondary shadow">
       <div className="m-2 d-flex align-items-center">
         <div className="mx-2 pt-1">
-          <Image
+          <Img
             className="rounded-circle"
             src={comentario.urlFoto}
             alt="Picture of the author"
@@ -38,16 +38,7 @@ const Comentario = ({ comentario }) => {
       </div>
       <div className="mx-5 border shadow rounded-3 my-1 ">
         <p className="mx-3 my-auto">{comentario.comentario}</p>
-        {/* {true ? (
-          <div className="mx-4 mb-2">
-            <Image
-              src="/images/perfil.jpg"
-              alt="Picture of the author"
-              width={100}
-              height={100}
-            />
-          </div>
-        ) : null} */}
+
       </div>
     </div>
   );

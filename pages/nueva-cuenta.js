@@ -1,19 +1,9 @@
 import React, { useState } from "react";
 import Layout from "../components/layout/Layout";
 import Link from "next/link";
-
 import firebase from "../firebase";
-
-import useValidacion from "../hooks/useValidacion";
 import validarCrearCuenta from "../validacion/validarCrearCuenta";
 import Router from "next/router";
-
-const STATE_INICIAL = {
-  nombre: "",
-  email: "",
-  password: "",
-  confirmar: "",
-};
 
 const NuevaCuenta = () => {
   const [valores, setValores] = useState({
@@ -31,6 +21,7 @@ const NuevaCuenta = () => {
     try {
       await firebase.registrar(nombre, email, password);
       Router.push("/perfil");
+
     } catch (error) {
       setErrorAuth(error.message);
     }
@@ -60,7 +51,7 @@ const NuevaCuenta = () => {
   }
   return (
     <Layout>
-      <div className="container align-middle mt-3 vh-75">
+      <div className="container align-middle mt-3 min-height">
         <div className="row mx-1 justify-content-center">
           <form
             className="card py-4 py-lg-0 py-xxl-4 col-12 col-lg-5 m-5vh"

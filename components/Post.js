@@ -1,13 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
-import Image from "next/image";
 import Comentario from "./Comentario";
 import { intlFormat, toDate } from "date-fns";
 import { es } from "date-fns/locale";
 import { FirebaseContext } from "../firebase";
+import Router from "next/router";
+import NoAuth from "./NoAutn";
+import { Img } from "./ui/Img";
 
 const Post = ({ post }) => {
-  const { usuario, firebase } = useContext(FirebaseContext);
-
+  let { usuario, firebase } = useContext(FirebaseContext);
+  if(!usuario){
+    usuario = {}
+    usuario.uid = "1"
+  }
   const { descripcion, comentarios, urlImg, likes, creador, dioLike, id } =
     post;
 
@@ -38,6 +43,10 @@ const Post = ({ post }) => {
   );
 
   const likePost = () => {
+    if(usuario.uid == "1"){
+      Router.push("iniciar-sesion")
+      return 
+    }
     if (dioLike.includes(usuario.uid)) {
       var newLikes = likes - 1;
       var newDioLike = dioLike.filter((dio) => dio !== usuario.uid);
@@ -65,7 +74,10 @@ const Post = ({ post }) => {
   };
   const agregarComentario = (e) => {
     e.preventDefault();
-
+    if(usuario.uid == "1"){
+      Router.push("iniciar-sesion")
+      return 
+    }
     // agregar info creador
     comentario.idUsuario = usuario.uid;
     comentario.nombreUsuario = usuario.displayName;
@@ -100,12 +112,13 @@ const Post = ({ post }) => {
   };
 
   return (
+    <>
     <div className="row justify-content-center g-0 mt-4 mx-2">
       <div className="col-lg-8 shadow-lg rounded-3 shadow-lg card">
         <div className=" d-flex justify-content-between">
           <div className='m-2 d-flex align-items-center'>
             <div className="mx-2 pt-1">
-              <Image
+              <Img
                 className="rounded-circle"
                 src={creador.urlFoto}
                 alt="Picture of the author"
@@ -130,11 +143,11 @@ const Post = ({ post }) => {
         </div>
 
         <div className="mx-3 ">
-          <p>{post.descripcion}</p>
+          <p>{descripcion}</p>
         </div>
         
         <div className='image-container '>
-          <Image src={urlImg} layout="fill" className={'image'} alt="image" />
+          <Img src={urlImg} className={'image'} alt="image" />
         </div>
 
         <div className="card bg-secondary mx-2 shadow">
@@ -182,6 +195,7 @@ const Post = ({ post }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
