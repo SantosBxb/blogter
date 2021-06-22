@@ -114,7 +114,7 @@ const Post = ({ post }) => {
   return (
     <>
     <div className="row justify-content-center g-0 mt-4 mx-2">
-      <div className="col-lg-8 shadow-lg rounded-3 shadow-lg card">
+      <div className="col-lg-8 shadow-lg rounded-3 shadow-lg card bg-app">
         <div className=" d-flex justify-content-between">
           <div className='m-2 d-flex align-items-center'>
             <div className="mx-2 pt-1">
@@ -127,8 +127,8 @@ const Post = ({ post }) => {
               />
             </div>
             <div className="mx-2">
-              <h6 className="mb-0">{creador.nombre}</h6>
-              <small className="">{creado}</small>
+              <h6 className="mb-0 text-primary">{creador.nombre}</h6>
+              <small className="text-secondary">{creado}</small>
             </div>
           </div>
           <div className="align-self-center mx-3">
@@ -142,7 +142,7 @@ const Post = ({ post }) => {
           </div>
         </div>
 
-        <div className="mx-3 ">
+        <div className="mx-3 text-light">
           <p>{descripcion}</p>
         </div>
         
@@ -150,19 +150,19 @@ const Post = ({ post }) => {
           <Img src={urlImg} className={'image'} alt="image" />
         </div>
 
-        <div className="card bg-secondary mx-2 shadow">
+        <div className="card bg-dark bg-secondary mx-2 shadow text-light">
           <div className="d-flex justify-content-around">
             <button
-              className={`btn btn-hover-2 w-50 ${
-                dioLike.includes(usuario.uid) && "text-info"
+              className={`btn btn-hover-2 w-50 bg-app mx-1 my-1 text-${
+                dioLike.includes(usuario.uid) ? "info" : "light"
               }`}
               onClick={likePost}
             >
               {likes} Likes
             </button>
             <button
-              className={`btn btn-hover-2 w-50 ${
-                displayComentarios === "" && "text-info"
+              className={`btn btn-hover-2 w-50 bg-app mx-1 my-1 text-${
+                displayComentarios === "" ? "info" : "light" 
               }`}
               onClick={clickComentarios}
             >
@@ -173,7 +173,7 @@ const Post = ({ post }) => {
         <form className="m-2 d-flex" onSubmit={agregarComentario}>
           <textarea
             type="text"
-            className="form-control no-resize h-3 mx-2 mt-2"
+            className="form-control no-resize h-3 mx-2 mt-2 bg-dark text-light"
             placeholder="Escribe un comentario"
             name="comentario"
             value={comentario.comentario}
@@ -185,7 +185,7 @@ const Post = ({ post }) => {
             value="Comentar"
           />
         </form>
-        <div className={`card  ${displayComentarios}`}>
+        <div className={`card bg-dark ${displayComentarios}`}>
           {comentarios.map((comentario, i) => (
             <Comentario
               key={`${comentario.idUsuario}-${i}`}

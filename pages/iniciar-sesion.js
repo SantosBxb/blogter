@@ -4,6 +4,7 @@ import Link from "next/link";
 import Router from "next/router";
 import firebase from "../firebase";
 import validarIniciarSesion from "../validacion/validarIniciarSesion";
+import Head from "next/head";
 
 const IniciarSesion = () => {
   const [valores, setValores] = useState({
@@ -60,75 +61,13 @@ const IniciarSesion = () => {
     return e1 != "" || e2 != "" ? "" : "invisible";
   };
   return (
-    <Layout>
-      <div className="container mt-3 vh-75">
-        <div className="row mx-1 justify-content-center">
-          {verificando ? (
-            <button className="btn btn-primary" type="button" disabled>
-              <span
-                className="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              ></span>
-              Cargando Imagen...
-            </button>
-          ) : null}
-          <form className="card m-5vh py-3 col-lg-5 " onSubmit={handleSubmit}>
-            <h2 className="card-header fw-light text-center bg-secondary shadow m-3">
-              Bienvenido
-            </h2>
-            <div className=""></div>
-            <div className="form-floating mx-3 my-2 shadow ">
-              <input
-                type="email"
-                className={`form-control ${errores.email && "is-invalid"} ${
-                  errorEmail && "is-invalid"
-                }`}
-                placeholder="ejemplo@mail.com"
-                id="email"
-                name="email"
-                value={email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              <label htmlFor="email">Ingrese su correo</label>
-              <div
-                className={`invalid-feedback ms-2 
-                  ${validar(errores.email, errorEmail)}`}
-              >
-                {errores.email ? errores.email : ""}
-                {errorEmail ? errorEmail : ""}
-              </div>
-            </div>
-            <div className="form-floating mx-3 my-2 shadow">
-              <input
-                type="password"
-                className={`form-control ${errores.password && "is-invalid"} ${
-                  errorPassword && "is-invalid"
-                }`}
-                placeholder="*******"
-                id="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              <label htmlFor="password">Ingrese su contraseña</label>
-              <div
-                className={`invalid-feedback ms-2 
-                  ${validar(errores.password, errorPassword)}`}
-              >
-                {errores.password ? errores.password : ""}
-                {errorPassword ? errorPassword : ""}
-              </div>
-            </div>
-
-            <input
-              type="submit"
-              className="m-3 btn btn-primary"
-              aria-describedby="submit"
-              value="Iniciar Sesión"
-            />
+    <>
+      <Head>
+        <title>Iniciar Sesión</title>
+      </Head>
+      <Layout>
+        <div className="container mt-3 vh-75">
+          <div className="row mx-1 justify-content-center">
             {verificando ? (
               <button className="btn btn-primary" type="button" disabled>
                 <span
@@ -139,17 +78,87 @@ const IniciarSesion = () => {
                 Cargando Imagen...
               </button>
             ) : null}
+            <form
+              className="card bg-app m-5vh py-3 col-lg-5 "
+              onSubmit={handleSubmit}
+            >
+              <h2 className="card-header text-center bg-dark shadow m-3">
+                Bienvenido
+              </h2>
+              <div className=""></div>
+              <div className="form-floating mx-3 my-2 shadow ">
+                <input
+                  type="email"
+                  className={`form-control bg-dark text-light ${
+                    errores.email && "is-invalid"
+                  } ${errorEmail && "is-invalid"}`}
+                  placeholder="ejemplo@mail.com"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                <label htmlFor="email">Ingrese su correo</label>
+                <div
+                  className={`invalid-feedback ms-2 
+                  ${validar(errores.email, errorEmail)}`}
+                >
+                  {errores.email ? errores.email : ""}
+                  {errorEmail ? errorEmail : ""}
+                </div>
+              </div>
+              <div className="form-floating mx-3 my-2 shadow">
+                <input
+                  type="password"
+                  className={`form-control bg-dark text-light ${
+                    errores.password && "is-invalid"
+                  } ${errorPassword && "is-invalid"}`}
+                  placeholder="*******"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                <label htmlFor="password">Ingrese su contraseña</label>
+                <div
+                  className={`invalid-feedback ms-2 
+                  ${validar(errores.password, errorPassword)}`}
+                >
+                  {errores.password ? errores.password : ""}
+                  {errorPassword ? errorPassword : ""}
+                </div>
+              </div>
 
-            <div id="submit" className="form-text mx-3 text-center">
-              ¿No tienes una cuenta?{" "}
-              <Link href="/nueva-cuenta">
-                <a>Crear Cuenta</a>
-              </Link>
-            </div>
-          </form>
+              <input
+                type="submit"
+                className="m-3 btn btn-primary"
+                aria-describedby="submit"
+                value="Iniciar Sesión"
+              />
+              {verificando ? (
+                <button className="btn btn-primary" type="button" disabled>
+                  <span
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Cargando Imagen...
+                </button>
+              ) : null}
+
+              <div id="submit" className="form-text mx-3 text-center">
+                ¿No tienes una cuenta?{" "}
+                <Link href="/nueva-cuenta">
+                  <a>Crear Cuenta</a>
+                </Link>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

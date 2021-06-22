@@ -103,11 +103,11 @@ const NuevoPost = () => {
       setError("");
     }
   };
- 
+
   return (
     <section onBlur={() => setError("")}>
-      <div className="row justify-content-center g-0 mt-4 mx-2">
-        <div className="col-lg-8 card shadow-lg rounded-3">
+      <div className="row justify-content-center g-0 mt-4 mx-2 ">
+        <div className="col-lg-8 card shadow-lg rounded-3 bg-app">
           <h3 className="card-title m-3 mb-2 shadow text-center ">
             Realiza una nueva Publicacion
           </h3>
@@ -115,7 +115,7 @@ const NuevoPost = () => {
             <div className={`form-floating ${heightTextArea}`}>
               <textarea
                 type="textarea"
-                className={`form-control card-subtitle bg-secondary fs-6 no-resize ${heightTextArea} ${
+                className={`form-control card-subtitle bg-dark text-light fs-6 no-resize ${heightTextArea} ${
                   error && "is-invalid"
                 }`}
                 placeholder="-"

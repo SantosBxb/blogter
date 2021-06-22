@@ -4,8 +4,8 @@ import { Img } from "../ui/Img";
 
 const Footer = () => {
   return (
-    <footer className="card m-2 shadow mt-5 ">
-        <div className="row my-2 mx-5">
+    <footer className="card m-2 shadow mt-5 bg-app ">
+        <div className="row my-2 mx-5 ">
           <div className="m-2 col-12 d-flex justify-content-center">
             <Link href="/">
               <a className="text-decoration-none  rounded-3 ">

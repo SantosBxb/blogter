@@ -2,9 +2,10 @@
 $primary: #5678EF; 
 $secondary: #f5f3f3;
 $info:#0099ff;
-$dark:rgba(218, 208, 208, 0.692);
+$dark:rgba(39, 38, 38, 0.788);
 $success: #39a5a5;
 $warning: #cf9047;
+$danger: #f56;
 $utilities: (
   "viewport-height": (
     property: height,
@@ -48,15 +49,34 @@ $custom-colors: (
   );
   // Merge the maps
   $theme-colors: map-merge($theme-colors, $custom-colors);
+body {
+  margin: 0;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background: radial-gradient(center, #000, #121, #321 );
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.bg-app{
+  background-color: #333;
+  color:#0099ff;
+}
 
 .min-height{
   min-height: 75vh;
 }
 
-  .footer {
+.layout-container{
+  position: relative;
+  height:100vh;
+}
+.footer {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
 }
   
@@ -146,10 +166,10 @@ $custom-colors: (
   }
 }
 .bg-negro{
-  background: linear-gradient(#000, #333);
+  background: linear-gradient(#000);
 }
 .bg-se{
-  background: linear-gradient(#000, #333)
+  background: radial-gradient(#000, #333)
 }
 .bg-menu{
   background: linear-gradient(rgba(49, 50, 51, 0.644), );

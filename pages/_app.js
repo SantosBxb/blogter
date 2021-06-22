@@ -1,8 +1,6 @@
-import '/styles/styles.css'
+  import '/styles/styles.css'
 import firebase, {FirebaseContext} from '../firebase'
 import useAutenticacion from '../hooks/useAutenticacion';
-import { useState } from 'react';
-// import 'bootstrap/dist/js/bootstrap.bundle'
 
 function MyApp({ Component, pageProps }) {
   

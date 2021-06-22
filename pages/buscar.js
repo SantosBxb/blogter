@@ -3,6 +3,7 @@ import Post from "../components/Post";
 import usePost from "../hooks/usePost";
 import Layout from "../components/layout/Layout";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function Buscar() {
   const router = useRouter();
@@ -25,10 +26,15 @@ export default function Buscar() {
     setResultado(filtro);
   }, [q, posts]);
   return (
+    <>
+    <Head>
+        <title>Buscar</title>
+      </Head>
     <Layout>
       {resultado.map((post) => (
         <Post key={post.id} post={post} />
       ))}
     </Layout>
+    </>
   );
 }

@@ -47,10 +47,10 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-negro g-0 fijo">
       <div className="container-fluid d-flex shadow shadow-info g-0">
-        <div className="navbar-brand flex-grow-1 text-center text-primary my-2 ms-5 fst-italic fw-bold rounded-3">
+        <div className=" navbar-brand flex-grow-1 text-center my-2 ms-5 fst-italic fw-bold rounded-3">
           <Link href="/">
-            <a className="text-decoration-none  rounded-3 pb-1">
-              <h1 className="d-inline shadow bg-se px-2 pb-1 ">BlogTer</h1>
+            <a className="text-decoration-none  rounded-3 pb-1 ">
+              <h1 className="d-inline shadow px-2 pb-1 ">BlogTer</h1>
             </a>
           </Link>
         </div>
@@ -89,7 +89,7 @@ const Header = () => {
             <>
               <div className="navbar-nav order-2 m-2 d-flex flex-shrink-0 flex-grow-1 align-items-center justify-content-center mx-lg-0 mx-3 mx-xl-3">
                 <Link href="/perfil">
-                  <a className="d-flex align-items-center">
+                  <a className="d-flex flex-column align-items-center">
                     <div className="mx-2 pt-1">
                       <Img
                         className="rounded-circle"
